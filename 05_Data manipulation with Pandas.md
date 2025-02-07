@@ -192,3 +192,33 @@ all_patients
 > - left join: Keeps all trial participants, useful for analyzing complete trial cohort
 > - right join: Keeps all patients with outcomes, including those not in trials
 > - outer join: Shows complete patient universe, with nulls where data is missing
+>
+> See if this makes sense by trying out these examples:
+>
+> ```
+> set_1=pd.DataFrame({
+>     'Gene':['Gene1','Gene2','Gene3'],
+>     'Expression':[0.1, 0.2, 0.3],
+> })
+>
+> set_2=pd.DataFrame({
+>     'Gene':['Gene1','Gene2','Gene4','Gene5','Gene6'],
+>     'Production':[0.3, 0.4, 0.5, 0.6, 0.7],
+> })
+> ```
+>
+> Print out these codes on separate lines
+>
+> ```
+> pd.merge(set_1,set_2,how='inner',on='Gene')
+> ```
+>
+> ```
+> pd.merge(set_1,set_2,how='right',on='Gene')
+> ```
+>
+> ```
+> pd.merge(set_1,set_2,how='left',on='Gene')
+> ```
+>
+> Do you spot the difference? 
