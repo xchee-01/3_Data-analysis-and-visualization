@@ -61,7 +61,8 @@ matrix = np.array([[1, 2, 3],
                    [7, 8, 9]])
 
 matrix2 = np.array([[10, 11, 12],
-                    [13, 14, 15]])
+                    [13, 14, 15],
+                    [16, 17, 18])
 ```
 
 You can do a vertical or horizontal concatenation 
