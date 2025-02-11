@@ -26,7 +26,7 @@ temperature_readings
 You can do some basic operations on a series. 
 
 ```
-# Returns boolean mask showing which temperatures are above 99.0°F
+# Returns boolean mask showing which temperatures are above 37.0
 print(temperature_readings > 37.0)
 
 # Calculates average/mean of all temperature readings
