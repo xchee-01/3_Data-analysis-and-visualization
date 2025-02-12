@@ -94,6 +94,34 @@ vital_signs.fillna(method='ffill', inplace=True)
 
 (b) Removing missing data (dropna())
 
+You can use the dataset below to try out:
+
+```
+import pandas as pd
+import numpy as np
+
+patient_ids = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10']
+genetic_marker_1 = ['A', 'B', None, 'A', 'C', 'B', None, 'A', 'B', 'C']
+genetic_marker_2 = ['X', None, 'Y', 'Z', 'X', 'Y', 'Z', None, 'X', 'Y']
+blood_pressure = [120, 135, None, 142, 118, None, 125, 130, 145, 122]
+cholesterol = [200, None, 220, 180, 190, 210, None, 195, 230, None]
+glucose = [90, 85, 95, None, 88, 92, 98, None, 85, 90]
+
+clinical_data = pd.DataFrame({
+    'patient_id': patient_ids,
+    'genetic_marker_1': genetic_marker_1,
+    'genetic_marker_2': genetic_marker_2,
+    'blood_pressure': blood_pressure,
+    'cholesterol': cholesterol,
+    'glucose': glucose
+})
+
+print("Original DataFrame:")
+print(clinical_data)
+```
+
+To remove missing data, you can:
+
 ```
 # Remove patients with missing genetic markers
 genetic_data = clinical_data.dropna(subset=['genetic_marker_1', 'genetic_marker_2'])
